@@ -20,6 +20,10 @@ class TemplateController extends Controller
         return view('FrontEnd.home',compact('Manu','data','cat'));
     }
 
+    public function showCart(){
+        return view('cart');
+    }
+
     public function showCustomer(){
         $cat = Category::get();
         $Manu = Manufacturer::get();
@@ -28,6 +32,8 @@ class TemplateController extends Controller
 
         return view('FrontEnd.customerHome',compact('Manu','data','cat'));
     }
+
+    
 
     // public function catShow($categoryID){
     //     $product = Product::get();

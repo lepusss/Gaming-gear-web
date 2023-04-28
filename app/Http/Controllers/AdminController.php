@@ -76,6 +76,7 @@ class AdminController extends Controller
         //return $data;
         return view('product-list',compact('product','data','category','manufacturer'));
     }
+
     public function addProduct(){
 
         $category = Category::get();
@@ -101,8 +102,6 @@ class AdminController extends Controller
             'categoryID' => 'required',
         ]);
        
-       
-        
         $productID = $request->id;
         $productName = $request -> name;
         $productPrice = $request->price;
@@ -110,12 +109,7 @@ class AdminController extends Controller
         $prowarranty = $request->warranty;
         $manufacturerID = $request->manufacturerID;
         $proImage = $request->file('image')->getClientOriginalName();
-        
-        
-        // $proImage = $request->file('proImage');
-        
         $request->image->move(public_path('image'),$proImage);
-        
         $categoryID = $request->categoryID;
         
         $pro = new Product();
@@ -127,10 +121,7 @@ class AdminController extends Controller
         $pro->manufacturerID = $manufacturerID;
         $pro->proImage = $proImage;
         $pro->categoryID = $categoryID;
-
         $pro->save();
-        
-        
         
         return redirect()->back()->with('success','Product Added Successfully');
     }
@@ -147,32 +138,16 @@ class AdminController extends Controller
     }
     
     public function updateProduct(Request $request){
-        // $request->validate([
-        //     'name' => 'required',
-            
-        //     'price' => 'required',
-            
-        //     'warranty' => 'required',
-        //     'manufacturerID' => 'required',
-        //     'image' => 'required',
-            
-        //     'categoryID' => 'required',
-        // ]);
-
+        
         $productID = $request->id;
         $productName = $request -> name;
         $productPrice = $request->price;
-
         $productDetails = $request->details;
-
         $prowarranty = $request->warranty;
         $manufacturerID = $request->manufacturerID;
         $proImage = $request->file('image')->getClientOriginalName();
         $request->image->move(public_path('image'),$proImage);
         $categoryID = $request->categoryID;
-
-        
-        
 
         Product::where('productID','=',$productID)->update([
             'productID'=>$productID,

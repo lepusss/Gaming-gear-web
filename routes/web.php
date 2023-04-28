@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[TemplateController::class,'index']);
 Route::get('/customerHome',[TemplateController::class,'showCustomer'])->middleware('isLoggedIn');
+Route::get('cart',[TemplateController::class,'showCart'])->middleware('isLoggedIn');
 // Route::get('home2',[TemplateController::class,'pageBreak']);
 
 
