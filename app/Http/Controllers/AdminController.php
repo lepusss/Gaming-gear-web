@@ -244,10 +244,7 @@ class AdminController extends Controller
         return redirect()->back()->with('success','Manufacturer Updated Successfully');
     }
 
-    public function deleteManufacturer($manuID){
-        Manufacturer::where('manufacturerID','=',$manuID)->delete();
-        return redirect()->back()->with('success','Manufacturer Detele Successfully');
-    }
+    
     //Category
     public function catShow(){
         
@@ -337,10 +334,7 @@ public function updateCategory(Request $request){
     
     return redirect()->back()->with('success','Product Updated Successfully');
 }
-public function deleteCategory($catID){
-    Category::where('categoryID','=',$catID)->delete();
-    return redirect()->back()->with('success','Category Detele Successfully');
-}
+
     // customer management
     public function cusShow(){
         

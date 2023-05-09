@@ -271,8 +271,7 @@
                                 <td>{{$cat->categoryID}}</td>
                                 <td>{{$cat->catName}}</td>
                                 <td>{{$cat->catDescriptions}}</td>
-                                <td><a href="{{url('edit-category/'.$cat->categoryID)}}"><i class="fa-solid fa-pen-to-square"></i></a> |
-                                  <a href="{{url('delete-category/'.$cat->categoryID)}}"  onclick="return confirm('Are you sure delete this category ?');" ><i class="fa-solid fa-trash"></i></a></td>
+                                <td><a href="{{url('edit-category/'.$cat->categoryID)}}"><i class="fa-solid fa-pen-to-square"></i></a></td>
                                 
                             </tr>
                         @endforeach

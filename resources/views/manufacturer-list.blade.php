@@ -271,8 +271,7 @@
                                 <td>{{$manu->manufacturerID}}</td>
                                 <td>{{$manu->manufacturerName}}</td>
                                 <td><img src="image/{{$manu->manufacturerLogo}}" alt="" width="500px" height="100px"></td>
-                                <td><a href="{{url('edit-manufacturer/'.$manu->manufacturerID)}}"><i class="fa-solid fa-pen-to-square"></i></a> |
-                                  <a href="{{url('delete-manufacturer/'.$manu->manufacturerID)}}"  onclick="return confirm('Are you sure delete this category ?');" ><i class="fa-solid fa-trash"></i></a></td>
+                                <td><a href="{{url('edit-manufacturer/'.$manu->manufacturerID)}}"><i class="fa-solid fa-pen-to-square"></i></a></td>
                                 
                             </tr>
                         @endforeach
