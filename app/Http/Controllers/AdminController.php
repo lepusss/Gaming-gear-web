@@ -244,7 +244,7 @@ class AdminController extends Controller
         return redirect()->back()->with('success','Manufacturer Updated Successfully');
     }
 
-    public function delete($manuID){
+    public function deleteManufacturer($manuID){
         Manufacturer::where('manufacturerID','=',$manuID)->delete();
         return redirect()->back()->with('success','Manufacturer Detele Successfully');
     }
