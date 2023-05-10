@@ -1,1 +1,0 @@
-@extends('FrontEnd.master');
